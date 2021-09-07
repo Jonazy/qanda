@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block main %}
+    <div class="container">
+
+    <div class="row">
+        <div class="col-sm-4 offset-4">
+        <div class="card_registration mt-5 mb-4">
+        <main class="form-signin mt-4">
+            <h1 class="h3 mb-3 fw-normal text-center">Logged Out</h1>
+            <div class="col-sm-12">
+                <p class="text-center" style="margin-top: -15px">
+                    Thanks for spending some quality time with the Web site today.
+                </p>
+                <a class="w-100 btn btn-lg btn-primary" href="{% url 'user:login' %}" type="submit">Log IN</a>
+            </div>
+        </main>
+    </div>
+    </div>
+</div>
+</div>
+{% endblock %}
