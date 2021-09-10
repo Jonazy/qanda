@@ -11,6 +11,13 @@ INSTALLED_APPS += [
 
 ]
 
+TEMPLATES['DIRS'].update({
+        'DIRS': [BASE_DIR / 'templates'],
+})
 
 MEDIA_URL = '/uploaded/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+]
