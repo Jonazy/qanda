@@ -1,0 +1,87 @@
+{% extends 'qa/base.html' %}
+
+{% block title %}
+    Question Details
+{% endblock %}
+
+
+{% block main %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2">
+<!--          1 of 3-->
+        </div>
+        <div class="col-md-8">
+            <div class="row">
+                <div class="col-sm-4">
+                    <h4 class="mt-5"><a href="{% url 'qa:questions' %}" type="button" class="btn btn-secondary">
+                        Back
+                    </a>
+                    </h4>
+                </div>
+                <div class="col-sm-8">
+                    <h4 class="mt-5">Question Details</h4>
+                </div>
+            </div>
+            <hr>
+            <div class="container-fluid">
+            <div class="row">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h4>{{ question_detail.title }}</h4>
+                    </div>
+                </div>
+               <div class="col-sm-2">
+                   <p>Asked by: {{ question_detail.user }}</p>
+               </div>
+
+               <div class="col-sm-2">
+                   <p>Answers: 10 </p>
+               </div>
+                <div class="col-sm-3">
+                   <p>Mark as answered? Yes </p>
+               </div>
+            </div>
+                <div class="mt-4 mb-3">
+                    <p>
+                        {{ question_detail.question }}
+                    </p>
+
+                    <div>
+                        <h6><small>Category:</small>
+                        <span class="badge bg-light text-dark">Python</span>
+                        <span class="badge bg-light text-dark">Django</span>
+                        </h6>
+                    </div>
+
+                </div><br>
+                    <div class="mt-4 mb-3">
+                        <h4>Answers</h4>
+                    <p class="answer-p">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        <br><br><small>by: Jonas</small>
+                    </p>
+                 </div>
+
+                <p class="answer-p">
+                    {{question_detail.}}
+                    <br><br><small>by: Jonas</small>
+                </p>
+            </div>
+
+            <div>
+
+            </div>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-5" style="margin-right: 15px">
+              <a type="button" href="{% url 'qa:add-answer' question_detail.id %}" class="btn btn-outline-primary">Add Answer</a><br>
+            </div>
+
+    </div>
+        <div class="col-md-2">
+<!--          3rd column-->
+        </div>
+    </div>
+</div>
+{% endblock %}

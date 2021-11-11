@@ -1,0 +1,58 @@
+{% extends 'qa/base.html' %}
+
+{% block title %}
+
+{% endblock %}
+
+
+{% block main %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2">
+<!--          1 of 3-->
+        </div>
+        <div class="col-md-8">
+            <div class="row">
+                <div class="col-sm-8">
+                    <h4 class="mt-4">All Questions</h4>
+                </div>
+                <div class="col-sm-4">
+                    <h4 class="mt-4"><a href="{% url 'qa:add-question' %}" type="button" class="btn btn-primary">Add New Question</a></h4>
+                </div>
+            </div>
+            <hr>
+            {% for question in questions %}
+                    {% if question == '' %}
+                    <p>No Question, Ask a question</p>
+                    {% else %}
+            <div class="question-container">
+                <div class="d-flex justify-content-between">
+                    <div class="d-flex flex-row align-items-center pl4 mt-3">
+                        <div class="icon"> <i class="bx bxl-mailchimp"></i> </div>
+                        <div class="ms-2 c-details">
+                            <h6 class="mb-0">Mailchimp</h6> <span class="day">1 days ago</span>
+                        </div>
+                    </div>
+                    <div class="badge"> <span class="">Answered</span> </div>
+                </div>
+
+                    <div class="question-details mt-4 mb-3">
+                        <h6>{{ question.title }}</h6>
+                        <p>{{ question.question }}
+                            <a type="button" class="btn btn-link" href="{% url 'qa:question' question.pk %}"><big>View Question Details</big></a>
+                        </p>
+                        <small>Category:</small>
+                        <span class="badge bg-light text-dark">Python</span>
+                        <span class="badge bg-light text-dark">Django</span>
+                    </div>
+
+            </div>
+            {% endif %}
+            {% endfor %}
+    </div>
+        <div class="col-md-2">
+<!--          3rd column-->
+        </div>
+    </div>
+</div>
+{% endblock %}

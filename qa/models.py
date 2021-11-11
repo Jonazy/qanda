@@ -15,7 +15,7 @@ class Question(models.Model):
         return self.title
     
     def get_absolute_url(self):
-        return reverse('qa.question_details', kwargs={'pk': self.id})
+        return reverse('qa:question', kwargs={'pk': self.id})
 
     def can_accept_answers(self, user):
         return user == self.user
@@ -30,7 +30,7 @@ class Answer(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.question + ' / ' + self.question
+        return self.answer
 
     class Meta:
         ordering = ('-created_at',)

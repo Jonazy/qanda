@@ -1,0 +1,47 @@
+{% extends 'qa/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    Add Answer
+{% endblock %}
+
+
+{% block main %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2">
+<!--          1 of 3-->
+        </div>
+        <div class="col-md-8">
+            <div class="row">
+                <div class="col-sm-4">
+                    <h4 class="mt-5"><a href="{% url 'qa:questions' %}" type="button" class="btn btn-secondary"> Back </a></h4>
+                </div>
+                <div class="col-sm-8">
+                    <h4 class="mt-5">Add Answer</h4>
+                </div>
+            </div>
+            <hr>
+            <div class="container-fluid">
+                <form class="was-validated" method="post">
+                    {% csrf_token %}
+                <div class="mb-3">
+                  <label for="exampleFormControlTextarea1" class="form-label">Answer<span>*</span></label>
+                  <textarea class="form-control" name="answer" id="exampleFormControlTextarea1" rows="3" required required
+                            placeholder="Enter more detail info about your question"></textarea>
+                </div>
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                      <button class="btn btn-primary" type="submit">SUBMIT ANSWER</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+
+        <div class="col-md-2">
+<!--          3 of 3-->
+        </div>
+    </div>
+</div>
+{% endblock %}
